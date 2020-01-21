@@ -99,7 +99,7 @@ export const DELETE_SABORES = 'mutation ($id: ID!) { deleteSabor(id: $id) }'
 - [React](https://pt-br.reactjs.org/docs/getting-started.html)
 - [GraphQL](https://github.com/prisma-labs/graphql-yoga)
 - [Axios](https://github.com/axios/axios)
-
+- [Material ui](https://material-ui.com/)
 
 
 
