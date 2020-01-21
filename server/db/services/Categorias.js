@@ -31,6 +31,15 @@ class Categorias {
                 }))
     }
 
+    update = ({id, name}) => {
+        const sql = `UPDATE categorias SET name='${name}' WHERE id=${id}`
+        return request(sql)
+                .then(res =>({
+                    id,
+                    name
+                }))
+    }
+
     delete = (id) => {
         const sql = `DELETE FROM categorias WHERE id=${id}`
         return request(sql)

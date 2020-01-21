@@ -19,6 +19,6 @@ module.exports = {
         deleteSabor: (root, {id}) => Sabores.delete(id),
 
         updateCategoria: (root, params) => Categorias.update(params),
-        updateSabor: (root, params) => Categorias.update(params),
+        updateSabor: (root, params) => Sabores.update(params),
     }
 }

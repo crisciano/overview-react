@@ -1,29 +1,50 @@
 # Overview React
 
-pre requisitos
-    conhecimento JS
+Pré-requisitos
+- conhecimento JS
+- nodejs
+- yarn
+- mysql
 
-
-yarn create react-app front
-npx create-react-app front
-
-conceitos basicos
+## Conceitos basicos
 - Components:
     são functions que retornam elementos renderizados no DOM 
 - State:
     são variaveis que podem ser reutilizadas em um component
 - Props:
-    são propriedades transferidas de pais para filhos
+    são propriedades transfêridas de components pais para components filhos
 
-conceitos utils
-- fragment
+## Conceitos utils
+- Fragment:
     permite agrupas multiplos components sem adição extas no DOM
-
-immutable
+- immutable
     consiste em nao alterar um state, mais sim criar um novo valor para esse state
 
+## Criando app React
+```javascript
+yarn create react-app front
+npx create-react-app front
+```
 
-## Schema
+# Start
+
+- Criar um novo banco de dados chamado pizzaria
+- Importar o banco `pizzaria.sql` da para `server`
+
+## Rodar app
+Server
+```javascript
+cd /server
+yarn start
+```
+Front
+
+```javascript
+cd /front
+yarn start
+```
+
+## Schema GraphQl
 
 ```graphQl
 type Categorias {
@@ -44,21 +65,17 @@ type Sabores {
 ## Querys
 
 ```javascript
-const categorias = "{categorias{ name sabores{ name ingredientes }}}" 
-const sabores = "{sabores{ name ingredientes categoria{ name }}}" 
-```
+export const GET_CATEGORIAS = "{categorias{ name sabores{ name ingredientes }}}"
+export const GET_SABORES = "{sabores{ name ingredientes categoria{ name }}}"
 
-## Rodar app
-Server
-```javascript
-cd /server
-yarn start
-```
-Front
+export const ADD_CATEGORIA = 'mutation ($name: String!) { addCategorias(name: $name){ id name }}';
+export const ADD_SABORES = 'mutation ($name: String!, $ingredientes: String!, $categoriaId: Int!) { addSabores(name: $name, ingredientes: $ingredientes, categoriaId: $categoriaId){ id name ingredientes }}';
 
-```javascript
-cd /front
-yarn start
+export const UPDATE_CATEGORIA = 'mutation ($id: ID!,$name: String!) { updateCategoria(id: $id, name: $name){ id name }}';
+export const UPDATE_SABORES = 'mutation ($id: ID!, $name: String!, $ingredientes: String!, $categoriaId: Int!) { updateSabor(id: $id, name: $name, ingredientes: $ingredientes, categoriaId: $categoriaId){ id name ingredientes categoriaId }}';
+
+export const DELETE_CATEGORIA = 'mutation ($id: ID!) { deleteCategoria(id: $id) }'
+export const DELETE_SABORES = 'mutation ($id: ID!) { deleteSabor(id: $id) }'
 ```
 
 

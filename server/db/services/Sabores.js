@@ -34,6 +34,17 @@ class Sabores {
                 }))
     }
 
+    update = ({id, name, ingredientes, categoriaId}) => {
+        const sql = `UPDATE sabores SET name='${name}',  ingredientes='${ingredientes}',  categoriaId='${categoriaId}' WHERE id=${id} `
+        return request(sql)
+                .then(res =>({
+                    id,
+                    name,
+                    ingredientes,
+                    categoriaId
+                }))
+    }
+
     delete = (id) => {
         const sql = `DELETE FROM sabores WHERE id=${parseInt(id)}`
         return request(sql)
