@@ -1,24 +1,24 @@
 # Overview React
 
 Pré-requisitos
-- conhecimento JS
-- nodejs
-- yarn
-- mysql
+- Conhecimento em JS
+- NodeJS
+- Yarn
+- MySQL
 
-## Conceitos basicos
+## Conceitos básicos
 - Components:
     são functions que retornam elementos renderizados no DOM 
 - State:
-    são variaveis que podem ser reutilizadas em um component
+    são variáveis que podem ser reutilizadas em um component
 - Props:
-    são propriedades transfêridas de components pais para components filhos
+    são propriedades transferidas de components pais para components filhos
 
 ## Conceitos utils
 - Fragment:
-    permite agrupas multiplos components sem adição extas no DOM
+    permite agrupares múltiplos components sem adições extras no DOM
 - immutable
-    consiste em nao alterar um state, mais sim criar um novo valor para esse state
+    consiste em nao alterar um state, mas sim criar um novo a partir desse state
 
 ## Criando app React
 ```javascript
@@ -29,17 +29,17 @@ npx create-react-app front
 # Start
 
 - Criar um novo banco de dados chamado pizzaria
-- Importar o banco `pizzaria.sql` da para `server`
+- Importar o banco `pizzaria.sql` para `server`
 
 ## Rodar app
 Server
-```javascript
+```shell
 cd /server
 yarn start
 ```
 Front
 
-```javascript
+```shell
 cd /front
 yarn start
 ```
@@ -62,7 +62,7 @@ type Sabores {
 }
 ```
 
-## Querys
+## Queries
 
 ```javascript
 export const GET_CATEGORIAS = "{categorias{ name sabores{ name ingredientes }}}"
@@ -86,7 +86,7 @@ library
 
 
 
-emmet react
+emmet React
 ctrl+shift+p
 ```javascript
 open settings(json)
