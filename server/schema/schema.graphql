@@ -1,0 +1,33 @@
+type Categorias {
+    id: ID!
+    name: String! 
+    sabores: [Sabores]
+}
+
+type Sabores {
+    id: ID!
+    name: String! 
+    ingredientes: String!
+    categoriaId: Int!
+    categoria: Categorias
+}
+
+type Mutation {
+    addCategorias(name: String!): Categorias
+    addSabores(name: String!, ingredientes: String!, categoriaId: Int!): Sabores
+
+    updateCategoria(name: String!, id: ID!): Categorias
+    updateSabor(name: String!, ingredientes: String!, categoriaId: Int!, id: ID!): Sabores
+
+    deleteCategoria(id: ID!): ID!
+    deleteSabor(id: ID!): ID!
+}
+
+
+type Query {
+    categorias: [Categorias!]!
+    sabores: [Sabores!]!
+
+    getCategoria(id: ID!): Categorias
+    getSabor(id: ID!): Sabores
+}

@@ -23,21 +23,26 @@ immutable
     consiste em nao alterar um state, mais sim criar um novo valor para esse state
 
 
+## Schema
 
-categorias
-    tradicionais
-    especiais 
-    doces
-    vegetarianas
-sabores
-    Atum
-    Alho e óleo
-    Americana
-recheios
-    Atum / Cebola / Catupiry
-    Alho / Óleo
-    Calabresa / Presunto / Milho Verde / Palmito / Ovo cozido / Cebola / Azeitonas
+type Categorias {
+    id: ID!
+    name: String! 
+    sabores: [Sabores]
+}
 
+type Sabores {
+    id: ID!
+    name: String! 
+    ingredientes: String!
+    categoriaId: Int!
+    categoria: Categorias
+}
+
+## Querys
+
+const categorias = "{categorias{ name sabores{ name ingredientes }}}" 
+const sabores = "{sabores{ name ingredientes categoria{ name }}}" 
 
 
 
