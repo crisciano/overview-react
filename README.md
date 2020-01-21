@@ -8,11 +8,11 @@ yarn create react-app front
 npx create-react-app front
 
 conceitos basicos
-- components
+- Components:
     são functions que retornam elementos renderizados no DOM 
-- state
+- State:
     são variaveis que podem ser reutilizadas em um component
-- props
+- Props:
     são propriedades transferidas de pais para filhos
 
 conceitos utils
@@ -25,6 +25,7 @@ immutable
 
 ## Schema
 
+```graphQl
 type Categorias {
     id: ID!
     name: String! 
@@ -38,13 +39,14 @@ type Sabores {
     categoriaId: Int!
     categoria: Categorias
 }
+```
 
 ## Querys
 
+```javascript
 const categorias = "{categorias{ name sabores{ name ingredientes }}}" 
 const sabores = "{sabores{ name ingredientes categoria{ name }}}" 
-
-
+```
 
 
 library
@@ -56,6 +58,7 @@ library
 
 emmet react
 ctrl+shift+p
+```javascript
 open settings(json)
     "emmet.syntaxProfiles": {
         "javascript": "jsx",
@@ -63,3 +66,4 @@ open settings(json)
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
     },
+```
