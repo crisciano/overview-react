@@ -35,7 +35,7 @@ class Sabores {
     }
 
     delete = (id) => {
-        const sql = `DELETE FROM sabores WHERE id=${id}`
+        const sql = `DELETE FROM sabores WHERE id=${parseInt(id)}`
         return request(sql)
                 .then(res => id)
     }
