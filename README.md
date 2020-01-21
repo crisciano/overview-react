@@ -48,6 +48,19 @@ const categorias = "{categorias{ name sabores{ name ingredientes }}}"
 const sabores = "{sabores{ name ingredientes categoria{ name }}}" 
 ```
 
+## Rodar app
+Server
+```javascript
+cd /server
+yarn start
+```
+Front
+
+```javascript
+cd /front
+yarn start
+```
+
 
 library
     https://pt-br.reactjs.org/docs/getting-started.html
