@@ -20,7 +20,7 @@ Pré-requisitos
 
 - Fragment:
   permite agrupares múltiplos components sem adições extras no DOM
-- Immutable
+- Immutable:
   consiste em não alterar um state, mas sim criar um novo a partir desse state
 
 ## Ciclo de vida
