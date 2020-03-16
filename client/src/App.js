@@ -5,6 +5,8 @@ import './App.css';
 import Categorias from './api/services/Categorias'
 import Sabores from './api/services/Sabores'
 
+import Home from './Components/Home/Home'
+
 
 class App extends Component  {
 
@@ -51,6 +53,7 @@ class App extends Component  {
   render() {
     return (
       <div className="App">
+        <Home />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
